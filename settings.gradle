@@ -1,0 +1,3 @@
+include ':PersonalAndroidUtils'
+include ':app'
+rootProject.name = "KotlinUtilLibraryDemo2k21"
