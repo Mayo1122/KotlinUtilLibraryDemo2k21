@@ -21,8 +21,8 @@ enum class NetworkType {
 fun Context.networkTypeName(): String {
     var result = "(No Network)"
     try {
-        val cm = this.getConnectivityManager()
-        val info = cm.activeNetworkInfo
+        val cm = connectivityManager
+        val info = cm?.activeNetworkInfo
         if (info == null || !info.isConnectedOrConnecting) {
             return result
         }
@@ -36,13 +36,16 @@ fun Context.networkTypeName(): String {
 }
 
 fun Context.networkOperator(): String {
-    val tm = this.telecomManager.getTelephonyManager()
-    return tm.networkOperator
+    val tm = this.telephonyManager
+    if (tm != null) {
+        return tm.networkOperator
+    }
+    return ""
 }
 
 fun Context.networkType(): NetworkType {
-    val cm = this.getConnectivityManager()
-    val info = cm.activeNetworkInfo
+    val cm = this.connectivityManager
+    val info = cm?.activeNetworkInfo
     if (info == null || !info.isConnectedOrConnecting) {
         return NetworkType.NONE
     }

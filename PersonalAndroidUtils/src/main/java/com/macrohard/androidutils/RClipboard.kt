@@ -12,7 +12,7 @@ import android.content.Context
  * @param[text] to copy
  */
 fun Context.copyText(text: CharSequence) {
-    clipboardManager.primaryClip = ClipData.newPlainText("text", text)
+    //clipboardManager?.primaryClip = ClipData.newPlainText("text", text)
 }
 
 /**

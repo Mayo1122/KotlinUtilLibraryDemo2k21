@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import pyxis.uzuki.live.richutilskt.impl.F2
+import com.macrohard.androidutils.impl.F2
 
 class RPermission private constructor() {
 
